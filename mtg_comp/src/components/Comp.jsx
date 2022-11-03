@@ -2,6 +2,6 @@
 
 export default function Comp (){
     return(
-        <div></div>
+        <div> I'm your deck</div>
     )
 }
