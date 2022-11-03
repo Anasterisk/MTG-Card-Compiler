@@ -2,6 +2,6 @@
 
 export default function Nav (){
     return(
-        <div></div>
+        <div> I'm the Nav Bar</div>
     )
 }
