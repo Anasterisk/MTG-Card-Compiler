@@ -5,6 +5,7 @@ export default function Nav (){
         <div> I'm the Nav Bar
             <Link to='/'> Home</Link>
             <Link to='/Comp'>Deck</Link>
+            <Link to='/Listing'>Cards</Link>
 
         </div>
     )

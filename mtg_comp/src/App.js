@@ -1,27 +1,33 @@
-
+import { DataContext } from './components/DataContext';
 import './App.css';
 import axios from 'axios';
-import{BASE_URL} from './globals'
-import {useEffect} from 'react'
+import {useState, useEffect} from 'react'
 import Header from './components/Header';
 import Footer from './components/Footer'
 import Main from './components/Main'
 function App() {
-  // useEffect(()=>{
-  //   const getCards= async()=>{
-  //     const response= await axios.get(`${BASE_URL}/v1`)
-  //   }
-  //   getCards
-  // },[])
+  const [data,setData]=useState([])
+
+  useEffect(()=>{
+      const getData= async()=>{
+          const response= await axios.get(`https://api.magicthegathering.io/v1/cards`)
+      setData(response.data)
+          }
+      getData()
+    },[])
+  console.log(data.cards.map((x)=> x.name))
+
   return (
     <div className="App">
       <div>
+        
         <Header/>
       </div>
       <hr/>
       <div>
+        <DataContext.Provider value={{data,setData}}>
         <Main/>
-        meh meh meh
+        </DataContext.Provider>
       </div>
       <hr/>
       <div>
