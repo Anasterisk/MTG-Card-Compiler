@@ -16,7 +16,7 @@ function App() {
           }
       getData()
     },[])
-console.log(data)
+console.log(typeof data)
 
   return (
     <div className="App">
