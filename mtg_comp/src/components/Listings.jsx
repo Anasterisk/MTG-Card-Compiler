@@ -3,19 +3,19 @@ import { useNavigate } from "react-router-dom"
 import { useContext } from "react"
 import { DataContext } from "./DataContext"
 
-export default function Listings (){
+export default function Listings (props){
 let navigate=useNavigate()
-const {data, useData}=useContext(DataContext)
+
+const {data, setData}=useState(props.data)
+
 const showCard=(x)=>{
     navigate(`${x.id}`)
 }
-
-console.log(data.cards.map((x)=> x.id))
     return( 
         
     <div className="card-page">
         {
-            data.cards.map((x)=>(
+            props.data.cards.map((x)=>(
                 (!x.imageUrl)?null:
                     <div key={x.id} className="card-panel">
                     <div className="open-panel" onClick={()=>showCard(x)}>

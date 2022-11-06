@@ -5,6 +5,7 @@ import {useState, useEffect} from 'react'
 import Header from './components/Header';
 import Footer from './components/Footer'
 import Main from './components/Main'
+import Detailed from './components/Detailed';
 function App() {
   const [data,setData]=useState([])
 
@@ -15,7 +16,7 @@ function App() {
           }
       getData()
     },[])
-  console.log(data.cards.map((x)=> x.name))
+console.log(data)
 
   return (
     <div className="App">
@@ -26,7 +27,7 @@ function App() {
       <hr/>
       <div>
         <DataContext.Provider value={{data,setData}}>
-        <Main/>
+        <Main data={data}/>
         </DataContext.Provider>
       </div>
       <hr/>
