@@ -8,7 +8,7 @@ import { Route,Routes } from 'react-router-dom'
 export default function Main (props){
 
     return(
-        <div> I'm the Main character
+        <div> Main display area
             <Routes>
                 <Route path='/' 
                     element={<Home/>}/>

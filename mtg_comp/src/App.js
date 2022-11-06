@@ -15,8 +15,8 @@ function App() {
       setData(response.data)
           }
       getData()
-    },[])
-console.log(typeof data)
+    },[data])
+
 
   return (
     <div className="App">

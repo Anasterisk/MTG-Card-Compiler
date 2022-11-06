@@ -9,30 +9,15 @@ export default function Detailed (props){
     
     const [data, setData] = useState('')
    
-    // console.log(typeof props.data.cards[0])
-    // console.log(typeof Object.values(props.data.cards))
-    console.log(props.data.cards.find((x)=>x.id=== id))
     
     useEffect(()=>{
         let selectedCard = props.data.cards.find((x)=>x.id=== id)
         setData(selectedCard) 
         console.log(data)
    
-    },) 
+    },[props.data,id]) 
 
-//    const gatherCard = async ()=>{
-//         const response= await axios.get(`https://api.magicthegathering.io/v1/cards`)
-//             setData(response.data)
-//         let selectedCard = response.data.cards.find((x)=>x.id=== toString(id))
-//             setData(selectedCard) 
-//                 console.log(selectedCard)
-//    }
-   
-//    useEffect(()=>{
-//         gatherCard()
-
-//    },[])
-   
+    console.log(data)
     return(!data)?
         <div> Please wait</div>
             :(
@@ -41,12 +26,18 @@ export default function Detailed (props){
            <div>{data.name}</div>
            <div> {data.manaCost}</div>
            </div>
-            <img src={data.imageUrl}/>
+            <img className="card-image" src={data.imageUrl}/>
             <div className="card-traits">
-                <div> {data.type}</div> <div></div>
-                <p>{data.text}</p>
-                <div>power: {data.power}/ toughness:{data.toughness}</div>
+                <div> {data.type}</div> 
+                <div></div>
+                <p className="card-text">{data.text}</p>
+                <ul className="card-stats">
+                <div>power:{data.power}</div> 
+                <div>toughness:{data.toughness}</div>
+                <div>Identity: {data.colorIdentity}</div>
+                </ul>
             </div>
+            <button> Add</button>
 
         </div>
     )
