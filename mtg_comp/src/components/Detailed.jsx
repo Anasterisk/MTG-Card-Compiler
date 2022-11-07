@@ -16,25 +16,34 @@ export default function Detailed (props){
         console.log(data)
    
     },[props.data,id]) 
-
+console.log(typeof data.colorIdentity)
     console.log(data)
     return(!data)?
         <div> Please wait</div>
             :(
         <div key={data.name} className="card-detailed">
             <div className="card-header">
-           <div>{data.name}</div>
+           <h2>{data.name}</h2>
            <div> {data.manaCost}</div>
            </div>
             <img className="card-image" src={data.imageUrl}/>
             <div className="card-traits">
                 <div> {data.type}</div> 
-                <div></div>
-                <p className="card-text">{data.text}</p>
+                <div className="card-text">
+                <p>{data.text}</p>
+                <p>{!data.flavor?null:<p><em>{data.flavor}</em></p>}</p>
+                </div>
                 <ul className="card-stats">
-                <div>power:{data.power}</div> 
-                <div>toughness:{data.toughness}</div>
-                <div>Identity: {data.colorIdentity}</div>
+                    <div>
+                    {data.types[0]==="Creature"
+                        ?<div>Power/Toughness: {data.power}/{data.toughness}</div>:null}
+                    </div>
+                <div>Identity: {data.colorIdentity=='U'? "Blue":
+                                data.colorIdentity=='W'? "White":
+                                data.colorIdentity=='B'? "Black":
+                                data.colorIdentity=='R'? "Red":
+                                data.colorIdentity=='G'? "Green": "Colorless"}</div>
+                <div>Colored Mana Cost: {data.cmc}</div>
                 </ul>
             </div>
             <button> Add</button>
