@@ -10,11 +10,15 @@ export default function SearchResult ( ){
             const response= await axios.get(`https://api.magicthegathering.io/v1/cards?name=${name}`)
             console.log(response)
         setResults(response.data)
+            console.log(response)
             }
         getData()
         
     },[])
-console.log(results.cards[0].name)
+// console.log(results.cards[0].name)
+if (!results){
+    return( <div> Please Wait</div>)
+}else{
     return(
         <div className="listings">
             <div className="card-page">
@@ -31,4 +35,4 @@ console.log(results.cards[0].name)
             </div>
         </div>
     )
-}
+}}

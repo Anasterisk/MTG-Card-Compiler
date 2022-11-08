@@ -5,10 +5,17 @@ export default function PageNav (props){
 const {value1, value2} =useContext(DataContext)
 const [data,setData]=useState(value1)
 const [page,setPage]=useState(value2)
+console.log(page)
+// useEffect(()=>{
+//     setPage()
+// },[])
 
-useEffect(()=>{
-    setPage()
-},[page])
+function check (){
+    console.log(page)
+    setPage(parseInt(page)+1)
+    console.log(page)
+}
+
 
 
     return (
@@ -18,7 +25,9 @@ useEffect(()=>{
                 <input type="text" />
             <button type="submit">Go to</button>
             </div>
-            <button> Next Page </button>
+            {/* <div> <h2>page:{page}</h2></div> */}
+
+            <button onClick={check }> Next Page </button>
 
         </div>
     )

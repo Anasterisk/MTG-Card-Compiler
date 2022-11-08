@@ -7,15 +7,23 @@ import PageNav from "./PageNav"
 
 export default function Listings (props){
 let navigate=useNavigate()
-
+const { value2} =useContext(DataContext)
 const {data, setData}=useState(props.data)
-
+// console.log(data)
 const showCard=(x)=>{
     navigate(`${x.id}`)
 }
+const [page,setPage]=useState(value2)
+console.log(page)
+console.log(value2)
+
+if(!props.data){return( <div>Please wait</div>)} 
+
+  else{
     return( 
     <div className="listings"> 
-           <PageNav page={props.page}/>
+           <PageNav/>
+           {/* <h2>page: {page}</h2> */}
     <div className="card-page">
         
         {
@@ -33,4 +41,4 @@ const showCard=(x)=>{
      </div>
      </div>
     )
-}
+}}
