@@ -4,7 +4,7 @@ import Comp from './Comp'
 import Listings from './Listings'
 import Detailed from './Detailed'
 import { Route,Routes } from 'react-router-dom'
-
+import SearchResult from './SearchResult'
 export default function Main (props){
 
     return(
@@ -16,10 +16,13 @@ export default function Main (props){
                     element={<Comp/>}/>
                 <Route path='/Listing' 
                     element={<Listings 
-                        data={props.data}/>}/>
+                        data={props.data}
+                        page={props.page}/>}/>
                 <Route path='/Listing/:id' 
                     element={<Detailed 
                         data={props.data}/>}/>
+                <Route path='/search/:name' 
+                    element={<SearchResult/>}/>
             </Routes>
 
         </div>

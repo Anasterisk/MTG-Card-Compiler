@@ -1,7 +1,8 @@
 import { DataContext } from './components/DataContext';
-import './App.css';
+import {createContext, useContext, useState, useEffect} from 'react';
 import axios from 'axios';
-import {useState, useEffect} from 'react'
+
+import './App.css';
 import Header from './components/Header';
 import Footer from './components/Footer'
 import Main from './components/Main'
@@ -11,12 +12,16 @@ function App() {
 
   useEffect(()=>{
       const getData= async()=>{
-          const response= await axios.get(`https://api.magicthegathering.io/v1/cards`)
+          const response= await axios.get(`https://api.magicthegathering.io/v1/cards${content}${page}`)
       setData(response.data)
           }
       getData()
-    },[data])
+    },[])
 
+const initialContent= ""
+const initialPage=""
+const [content,setContent]=useState(initialContent)
+const [page, setPage]=useState(initialPage)
 
   return (
     <div className="App">
@@ -26,8 +31,11 @@ function App() {
       </div>
       <hr/>
       <div>
-        <DataContext.Provider value={{data,setData}}>
-        <Main data={data}/>
+        <DataContext.Provider 
+            value={{value1:[data,setData], value2:[page,setPage], value3:[content,setContent]}}>
+        <Main data={data}
+              page={[page,setPage]}
+              content={[content,setContent]}/>
         </DataContext.Provider>
       </div>
       <hr/>

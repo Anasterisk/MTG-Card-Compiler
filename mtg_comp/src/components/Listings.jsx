@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom"
 import { useContext } from "react"
 import { DataContext } from "./DataContext"
 
+import PageNav from "./PageNav"
+
 export default function Listings (props){
 let navigate=useNavigate()
 
@@ -12,8 +14,10 @@ const showCard=(x)=>{
     navigate(`${x.id}`)
 }
     return( 
-        
+    <div className="listings"> 
+           <PageNav page={props.page}/>
     <div className="card-page">
+        
         {
             props.data.cards.map((x)=>(
                 (!x.imageUrl)?null:
@@ -26,6 +30,7 @@ const showCard=(x)=>{
            <hr/>
             </div>
             ))}
+     </div>
      </div>
     )
 }

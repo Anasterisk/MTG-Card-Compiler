@@ -43,7 +43,7 @@ console.log(typeof data.colorIdentity)
                                 data.colorIdentity=='B'? "Black":
                                 data.colorIdentity=='R'? "Red":
                                 data.colorIdentity=='G'? "Green": "Colorless"}</div>
-                <div>Colored Mana Cost: {data.cmc}</div>
+                <div>Converted Mana Cost: {data.cmc}</div>
                 </ul>
             </div>
             <button> Add</button>
