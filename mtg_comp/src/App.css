@@ -1,11 +1,12 @@
 .App {
   text-align: center;
+  align-items: center;
 }
 
 
 
 .App-header {
-  background-color: #282c34;
+  background-color: white;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -15,9 +16,7 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
+
 .select-Page{
   display: flex;
   flex-direction: column;
@@ -36,4 +35,45 @@
 }
 .card-panel{
   margin: 4px;
+}
+body, html{
+  height: 100%;
+  width: 100%;
+}
+.Main{
+ 
+  background-image: url(/public/images/Default\ Background\ -sol\ ring.jpeg);
+  height: 100vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: scroll;
+  display: grid;
+  background-color: transparent;
+  
+}
+.Header{
+  height: 100%;
+  /* width: 100vh; */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size:cover;
+  font-size: 15px;
+  color: aliceblue;
+  background-color: transparent;
+}
+.Listings{
+background-color: transparent;
+color: aliceblue;
+}
+.Nav{
+  -webkit-text-stroke-width: 0px;
+}
+.Detailed{
+  color: aliceblue;
+}
+
+.name{
+  color: rgb(50, 52, 54);
 }

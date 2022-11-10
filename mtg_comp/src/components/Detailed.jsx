@@ -21,10 +21,11 @@ console.log(typeof data.colorIdentity)
     return(!data)?
         <div> Please wait</div>
             :(
-        <div key={data.name} className="card-detailed">
+                <div className="Detailed">
+        <div className={data.colorIdentity}>
+        <div key={data.name} className="card-detailed" >
             <div className="card-header">
-           <h2>{data.name}</h2>
-           <div> {data.manaCost}</div>
+           <h2 className="name">{data.name}</h2>
            </div>
             <img className="card-image" src={data.imageUrl}/>
             <div className="card-traits">
@@ -46,8 +47,10 @@ console.log(typeof data.colorIdentity)
                 <div>Converted Mana Cost: {data.cmc}</div>
                 </ul>
             </div>
-            <button> Add</button>
+        
 
+        </div>
+        </div>
         </div>
     )
 }
