@@ -27,3 +27,5 @@ The site will be build with PostgreSQL and Seqeulize in the backend with React a
 https://www.bezkoder.com/
 https://tailwindcss.com/docs/installation
 
+#Backend Github
+https://github.com/Anasterisk/MTG-backend-3rd-attempt
