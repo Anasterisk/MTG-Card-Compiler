@@ -14,7 +14,7 @@ Create an interactable card that allows you pick and adjust the traits of the te
 https://wireframe.cc/CMvi6O
 The most general layout would most likely be this with the top left panel being the stretch goal layout.
 
-## ERD and Component Heirarchy Diagram
+# ERD and Component Heirarchy Diagram
 https://www.figma.com/file/5gvjAKr0iIBEG0UFC10Vxa/MTG-Online-Deck-compiler?node-id=0%3A1&t=q4vEc3bd1D4OKqUO-0
 
 #Details
