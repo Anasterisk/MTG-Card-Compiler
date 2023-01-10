@@ -17,6 +17,9 @@ The most general layout would most likely be this with the top left panel being 
 ## ERD and Component Heirarchy Diagram
 https://www.figma.com/file/5gvjAKr0iIBEG0UFC10Vxa/MTG-Online-Deck-compiler?node-id=0%3A1&t=q4vEc3bd1D4OKqUO-0
 
+## Trello
+https://trello.com/b/I3v9UNGj/magic-teh-gather-online-p4
+
 # Details
 The site will be build with PostgreSQL and Seqeulize in the backend with React and Tailwindcss on the front. 
 
